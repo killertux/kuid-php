@@ -39,8 +39,12 @@ abstract class KUIDBase implements KUIDInterface {
 		return Uuid::fromHexadecimal(new Hexadecimal(self::encode_number($this->uuid_as_number, 32, self::BASE16)));
 	}
 
-	public function equals(self $other): bool {
-		return \gmp_cmp($this->uuid_as_number, $other->uuid_as_number) === 0;
+	public function equals(KUIDInterface $other): bool {
+		return \gmp_cmp($this->internal_number(), $other->internal_number()) === 0;
+	}
+
+	public function internal_number(): \GMP {
+		return $this->uuid_as_number;
 	}
 
 	public function __toString(): string {

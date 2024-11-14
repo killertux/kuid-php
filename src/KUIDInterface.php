@@ -12,5 +12,6 @@ interface KUIDInterface {
 	public function toUUID(): UuidInterface;
 	public function toString(): string;
 	public function equals(self $other): bool;
+	public function internal_number(): \GMP;
 	public function __toString(): string;
 }
