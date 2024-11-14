@@ -1,0 +1,30 @@
+{
+    "name": "killertux/kuid-php",
+    "description": "A smaller encoded UUID",
+    "type": "library",
+    "require": {
+        "ramsey/uuid": "^4.7",
+        "ext-gmp": "*",
+        "php": "^8.1"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^11.4"
+    },
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Killertux\\KuidPhp\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\Killertux\\KuidPhp\\": "tests/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Bruno Clemente",
+            "email": "bruno.canguru@hotmail.com"
+        }
+    ]
+}
