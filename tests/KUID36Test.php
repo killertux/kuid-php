@@ -23,8 +23,14 @@ class KUID36Test extends TestCase {
 	public function testFromString(): void {
 		$kuid_1 = KUID36::random();
 		$kuid_2 = KUID36::new();
-		self::assertEquals(KUID36::random(), KUID36::fromString($kuid_1->toString()));
-		self::assertEquals(KUID36::random(), KUID36::fromString($kuid_2->toString()));
+		self::assertTrue($kuid_1->equals(KUID36::fromString($kuid_1->toString())));
+		self::assertTrue($kuid_2->equals(KUID36::fromString($kuid_2->toString())));
+	}
+
+	public function testEquals(): void {
+		$kuid = KUID36::random();
+		self::assertTrue($kuid->equals($kuid));
+		self::assertFalse($kuid->equals(KUID36::random()));
 	}
 
 }
